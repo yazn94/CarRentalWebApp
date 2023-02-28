@@ -1,0 +1,6 @@
+com\atypon\CarRentalManagerService\secondaryClasses\UserInfo.class
+com\atypon\CarRentalManagerService\CarRentalManagementApplication.class
+com\atypon\CarRentalManagerService\CarRentalManagementController.class
+com\atypon\CarRentalManagerService\CarRentingEntity.class
+com\atypon\CarRentalManagerService\secondaryClasses\AuthenticationService.class
+com\atypon\CarRentalManagerService\CarRentalRepository.class

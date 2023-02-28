@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentication Failed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 150px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4c9daf;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #14464b;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 style="text-align: center">Authentication Failed</h1>
+    <p>Authentication failed. If you're an admin, please ensure that you have entered the correct email and
+        password.</p>
+    <form action="/login" method="get">
+        <button style="font-size: 15px" type="submit">Authenticate Again</button>
+    </form>
+</div>
+</body>
+</html>

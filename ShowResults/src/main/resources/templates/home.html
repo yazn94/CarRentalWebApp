@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 150px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+        margin-top: 0;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 10px;
+        background-color: #4c9daf;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #14464b;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+
+<div class="container">
+    <h2 style="text-align: center">What kind of data do you want to preview ?</h2>
+
+    <form action="/all-data" method="get">
+        <button style="font-size: 20px" type="submit">Preview All Data</button>
+    </form>
+
+    <form action="/analytics" method="get">
+        <button style="font-size: 20px" type="submit">Preview Analytics</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Rental Manager</title>
+    <script>
+        function validateForm() {
+            const customerSsnInput = document.getElementById("customerSsn");
+            const customerSsnError = document.getElementById("customerSsnError");
+
+            const customerSsn = customerSsnInput.value.trim();
+            if (customerSsn === "") {
+                customerSsnError.innerText = "Social Security Number is required.";
+                return false;
+            }
+            const ssnRegex = /^\d{9}$/;
+            if (ssnRegex.test(customerSsn)) {
+                customerSsnError.innerText = "";
+                return true;
+            } else {
+                customerSsnError.innerText = "Social Security Number must be a 9-digit number.";
+                return false;
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            width: 30%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4c9daf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #14464b;
+        }
+
+        input[name="customerSsn"]:hover {
+            background: #F2F2F2;
+        }
+
+        input[name="customerName"] {
+            margin-top: 5px;
+        }
+
+        input[name="customerName"]:hover {
+            background: #F2F2F2;
+        }
+
+        input[name="rentedCarModel"]:hover {
+            background: #F2F2F2;
+        }
+
+        .error {
+            color: red;
+            margin-top: 2px;
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Car Rental Manager</h1>
+<form action="/store-car-rental-data" method="post" onsubmit="return validateForm()">
+
+    <label for="customerSsn">Customer SSN:</label>
+    <input id="customerSsn" name="customerSsn" required type="text">
+    <div class="error" id="customerSsnError" style="text-align: center"></div>
+
+    <label for="customerName">Customer Name:</label>
+    <input id="customerName" name="customerName" required type="text">
+
+    <label for="rentedCarModel">Rented Car Model:</label>
+    <input id="rentedCarModel" name="rentedCarModel" required type="text">
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
