@@ -3,6 +3,7 @@ services:
   mysql:
     image: mysql
     restart: always
+    container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: 123456
     ports:
@@ -10,6 +11,7 @@ services:
 
   mongo:
     image: mongo
+    container_name: mongo
     restart: always
     ports:
       - "27017:27017"
@@ -17,6 +19,7 @@ services:
   auth:
     build: ./AuthenticationService
     restart: always
+    container_name: auth
     ports:
       - "8080:8080"
     depends_on:
@@ -24,6 +27,7 @@ services:
 
   analytics:
     build: ./AnalyticsService
+    container_name: analytics
     restart: always
     ports:
       - "9500:9500"
@@ -34,6 +38,7 @@ services:
   car-rental:
     build: ./CarRentalService 
     restart: always
+    container_name: car-rental
     ports:
       - "9000:9000"
     depends_on:
@@ -43,6 +48,7 @@ services:
 
   show:
     build: ./ShowResults
+    container_name: show
     restart: always
     ports:
       - "9999:9999"
