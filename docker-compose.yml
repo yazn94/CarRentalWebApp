@@ -15,7 +15,7 @@ services:
       - "27017:27017"
 
   auth:
-    build: ./Authentication_Service
+    build: ./AuthenticationService
     restart: always
     ports:
       - "8080:8080"
@@ -42,7 +42,7 @@ services:
       - analytics
 
   show:
-    build: ./ShowResutls
+    build: ./ShowResults
     restart: always
     ports:
       - "9999:9999"
