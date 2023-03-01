@@ -1,6 +1,7 @@
 package com.atypon.CarRentalManagerService.secondaryClasses;
 
 public class UserInfo {
+
     private String email;
     private String password;
 

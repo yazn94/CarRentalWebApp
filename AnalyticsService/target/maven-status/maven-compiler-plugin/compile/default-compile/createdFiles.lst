@@ -1,0 +1,4 @@
+com\atypon\analyticsservice\AnalyticsServiceApplication.class
+com\atypon\analyticsservice\AnalyticsService.class
+com\atypon\analyticsservice\MongoRelated\AnalyticsDocument.class
+com\atypon\analyticsservice\MongoRelated\MongoConfig.class

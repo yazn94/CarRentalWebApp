@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 public class AuthenticationService {
     public boolean authenticate(UserInfo userInfo) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/authentication"; // the actual URL of the authentication service endpoint
+        String url = "http://auth:8080/authentication"; // the actual URL of the authentication service endpoint
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<UserInfo> request = new HttpEntity<>(userInfo, headers);

@@ -1,0 +1,52 @@
+version: '3'
+services:
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - "3306:3306"
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+
+  auth:
+    build: ./Authentication_Service
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+
+  analytics:
+    build: ./AnalyticsService
+    restart: always
+    ports:
+      - "9500:9500"
+    depends_on:
+      - mysql
+      - mongo
+
+  car-rental:
+    build: ./CarRentalService 
+    restart: always
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mysql
+      - auth
+      - analytics
+
+  show:
+    build: ./ShowResutls
+    restart: always
+    ports:
+      - "9999:9999"
+    depends_on:
+      - auth
+      - mysql
+      - mongo

@@ -57,6 +57,7 @@ public class CarRentalManagementController {
     public String storeCarRentalData
             (@RequestParam Long customerSsn, @RequestParam String customerName,
              @RequestParam String rentedCarModel) {
+
         CarRentingEntity carRentingEntity = new CarRentingEntity(customerSsn, customerName, rentedCarModel);
         carRentalRepository.save(carRentingEntity);
         return "redirect:/successful-rental-data-entry";
@@ -64,11 +65,12 @@ public class CarRentalManagementController {
 
     @GetMapping("/successful-rental-data-entry")
     public String successfulRentingDataEntry(Model model) {
-        // sending a post request to the analytics service to notify it when
+
+        // Sending a post request to the analytics service to notify it when
         // a new entry has been added to MySQL database.
 
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:9500/update-analytics";
+        String url = "http://analytics:9500/update-analytics";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<String> entity = new HttpEntity<>(headers);
