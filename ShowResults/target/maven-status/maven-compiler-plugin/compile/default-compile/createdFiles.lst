@@ -1,0 +1,9 @@
+com\atypon\showresults\secondaryClasses\CarRentingEntity.class
+com\atypon\showresults\secondaryClasses\UserInfo.class
+com\atypon\showresults\DataService.class
+com\atypon\showresults\ShowResultsApplication.class
+com\atypon\showresults\secondaryClasses\MongoConfig.class
+com\atypon\showresults\ShowResultsServiceController.class
+com\atypon\showresults\secondaryClasses\AuthenticationService.class
+com\atypon\showresults\secondaryClasses\AnalyticsDocument.class
+com\atypon\showresults\secondaryClasses\AnalyticsEntity.class
